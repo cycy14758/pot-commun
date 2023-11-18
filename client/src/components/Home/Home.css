@@ -1,0 +1,90 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #fbfbfd;
+  background-color: rgb(251, 252, 253);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.navbar-toggler-icon {
+  color: #fff;
+}
+
+.icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header Styles */
+#intro {
+  height: 100vh;
+  background-repeat: no-repeat;
+  margin-top: -58.59px; /* Adjusted value for larger screens */
+}
+
+/* Home Section Styles */
+.home {
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+  width: 100%; /* Adjusted to full width */
+}
+
+/* Carousel Image Styles */
+.img-fluid {
+  height: 400px !important;
+}
+
+/* Card Styles */
+.card {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  height: 700px;
+
+}
+
+/* Button Styles */
+.btn {
+  font-size: 14px;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  #intro {
+    margin-top: 0;
+  }
+}

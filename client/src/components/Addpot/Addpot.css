@@ -1,0 +1,27 @@
+.fer{
+
+    width:400px ;
+}
+.custom-select-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style the custom select */
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: url('https://cdn.iconscout.com/icon/free/png-512/free-down-arrow-16-460295.png?f=webp&w=256') no-repeat right 8px center;
+    background-size: 20px; /* Adjust the size of the custom arrow */
+}
+
+/* Style the options within the custom select */
+.custom-select option {
+    font-size: 14px;
+}
