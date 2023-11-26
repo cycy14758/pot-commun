@@ -8,7 +8,7 @@ const navigate=useNavigate()
 
   return (
     <div>
-{token?children:navigate("/Profil") }
+{token?children:navigate("/") }
     </div>
   )
 }

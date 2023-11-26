@@ -27,7 +27,7 @@ line-height: 1.5;
 margin: 0;
 text-align: left;
 color: #525f7f;
-background-color: #f8f9fe;
+background-color: #c92a2a00;
 }
 
 [tabindex='-1']:focus {
@@ -1437,6 +1437,7 @@ align-items: center;
 justify-content: center;
 }
 
+
 .avatar img {
 width: 100%;
 border-radius: 50%;
@@ -1717,6 +1718,7 @@ border-color: rgba(50, 151, 211, .25);
 
 .header {
 position: relative;
+background-color:black;
 }
 
 .input-group {
@@ -1784,6 +1786,7 @@ left: 0;
 width: 100%;
 height: 100%;
 transition: all .15s ease;
+background-color: #ffffff;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -1990,4 +1993,14 @@ margin-bottom: 20px;
 }
 .form_edit{
   width: 2000px;
+}
+.bo{
+  bottom: 400px;
+  position: relative;
+  left: 600px;
+}
+.bou{
+  bottom: 400px;
+  position: relative;
+  left: 600px;
 }

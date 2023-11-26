@@ -1,11 +1,11 @@
-import { ADD_USER_SUCCESS, GET_ALLUSER_SUCCESS, GET_CURRENT_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL } from "../Const/Constuser"
+import { ADD_USER_SUCCESS, DELETE_ONEUSER_SUCCESS, EDIT_USER, GET_ALLUSER_SUCCESS, GET_CURRENT_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL } from "../Const/Constuser"
 
 
 
 const initialstate={
    users:[],
    currentuser:{},
-  error:{}
+  errors:{}
 
 }
 
@@ -19,7 +19,7 @@ export const    userReducer =(state=initialstate,{type,payload})=>{
         case ADD_USER_SUCCESS :
             return { ...state }
         case REGISTER_FAIL:
-            return { ...state, errors: payload,errors:payload }
+            return { ...state, errors:payload }
         case LOGIN_SUCCESS:
             localStorage.setItem("token", payload.token)
             return { ...state, currentuser: payload.user ,errors:{}}
@@ -33,7 +33,10 @@ export const    userReducer =(state=initialstate,{type,payload})=>{
             return {...state,users:payload}
         case LOGOUT:
             localStorage.removeItem("token")
-            return {...state}   
+            return {...state}  
+            case EDIT_USER :
+                return {...state}   
+               
         default:
             return state
     }

@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getusers } from '../../Redux/Actions/Actionuser'
 
- 
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
 function Userlist() {
  
  
@@ -32,16 +33,16 @@ function Userlist() {
               <thead>
                 <tr>
                   <th><span>User</span></th>
-                  <th><span>name</span></th>
-  
                   <th><span>Email</span></th>
+  
+                  <th><span>paramétre</span></th>
                   <th>&nbsp;</th>
                 </tr>
               </thead>
               <tbody>
                {users.map((el)=><tr>
                   <td>
-                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt />
+                    <img src="https://img.freepik.com/photos-gratuite/portrait-jeune-fille-belle-hipster-robe-ete-mode_158538-18256.jpg?w=740&t=st=1700572696~exp=1700573296~hmac=11e354979b60ad0cf54d761752ffda4b028387ed564f0f0b664685962ded05be" alt />
                     <a href="#" className="user-link">{el.name}</a>
                     <span className="user-subhead">Admin</span>
                   </td>
@@ -82,6 +83,7 @@ function Userlist() {
             <li><a href="#">4</a></li>
             <li><a href="#">5</a></li>
             <li><a href="#"><i className="fa fa-chevron-right" /></a></li>
+        
           </ul>
         </div>
       </div>

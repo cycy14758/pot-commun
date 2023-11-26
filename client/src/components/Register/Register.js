@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import  { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Alert from '../Alert/Alert'
 import { addUser } from '../../Redux/Actions/Actionuser';
 function Register() {
   const [name, setname] = useState("");
@@ -60,7 +60,7 @@ function Register() {
       <label > choisir un fichier </label>
 
       <input type="file" onChange={(e) => setimg(e.target.files[0])} />
-      <Link to={"/Profil"}  > <button onClick={handleSubmit}    className='log'>Register</button></Link>
+       <button onClick={handleSubmit}    className='log'>Register</button>
    
     
     </form>

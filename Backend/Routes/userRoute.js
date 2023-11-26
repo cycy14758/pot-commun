@@ -55,6 +55,8 @@ router.post('/login', loginCheck(), validator, async (req, res) => {
     } catch (error) {
         console.log(error);
         res.status(400).send({ msg: error.message })
+
+        
 }})
 // get current user ==>private
 router.get("/current",isAuth(), (req, res) => {

@@ -1,27 +1,125 @@
-.fer{
-
-    width:400px ;
+.formbold-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
 }
+
+form {
+  padding: 40px 30px;
+  background: var(--bs-gray-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  width: max-content;
+  height:400px;
+}
+
+.formbold-form-title h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+ 
+ 
+  color: #0d6efd; /* Deep blue color for text */
+}
+
+.formbold-form-label {
+  color: #ffffff!important;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formbold-form-input {
+  text-align: center;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 5px;
+  border: 1px solid #0d6efd;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  color:#0d6efd;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.formbold-form-input:focus {
+  border-color: #6a64f1;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
 .custom-select-container {
-    position: relative;
-    display: inline-block;
+  margin-bottom: 15px;
 }
 
-/* Style the custom select */
 .custom-select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: url('https://cdn.iconscout.com/icon/free/png-512/free-down-arrow-16-460295.png?f=webp&w=256') no-repeat right 8px center;
-    background-size: 20px; /* Adjust the size of the custom arrow */
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #001f3f;
+  background: #fff;
+  color: #001f3f;
+  outline: none;
 }
 
-/* Style the options within the custom select */
-.custom-select option {
-    font-size: 14px;
+.custom-form-item-unique {
+  margin-bottom: 15px;
+}
+
+.custom-label {
+  color:#ffffff;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 5px;
+  border: 1px solid #001f3f;
+  background: #fff;
+  color: #001f3f;
+  outline: none;
+}
+
+.formbold-btn {
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 14px 25px;
+  border: none;
+  font-weight: 500;
+  background-color: #ffd700; /* Luxurious gold color */
+  color: #001f3f;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.formbold-btn:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+.additional-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.additional-heading {
+  font-size: 24px;
+  color: #333333;
+}
+
+.additional-content {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555555;
+}
+.ajout{
+  background-color: var(--bs-gray-900);
 }

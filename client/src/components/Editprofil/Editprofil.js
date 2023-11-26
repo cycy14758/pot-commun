@@ -1,6 +1,40 @@
 import React from 'react'
 import "./Editprofil.css"
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
+import { useEffect } from 'react'
+import {  editUser } from '../../Redux/Actions/Actionuser'
+import { Link } from 'react-router-dom'
 function Editprofil() {
+  const [name, setname] = useState("");
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+  const [img, setimg] = useState();
+    const [newInfo, setnewInfo] = useState("")
+  const user = useSelector(state => state.userReducer.currentUser)
+  const navigate = useNavigate();
+
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    setnewInfo(user)
+  }, [user])
+
+const handlesubmit=(e)=>{
+
+  const data = new FormData();
+    
+  data.append("password",password)
+  data.append("email", email)
+  data.append("name",name)
+  data.append("file",img)
+  dispatch(editUser(user._id,data, navigate))
+
+     navigate('/Profil')
+  }
+
   return (
    <div>
   <link  rel="stylesheet" />
@@ -18,10 +52,10 @@ function Editprofil() {
             <a className="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div className="media align-items-center">
                 <span className="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg" />
+                  <img alt="Image placeholder" src={user.img}/>
                 </span>
                 <div className="media-body ml-2 d-none d-lg-block">
-                  <span className="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                  <span onChange={(e) => setimg(e.target.files[0])} className="mb-0 text-sm  font-weight-bold">{user.name}</span>
                 </div>
               </div>
             </a>
@@ -35,21 +69,16 @@ function Editprofil() {
               </a>
               <a href="" className="dropdown-item">
                 <i className="ni ni-settings-gear-65" />
-                <span>Settings</span>
               </a>
               <a href="../examples/profile.html" className="dropdown-item">
                 <i className="ni ni-calendar-grid-58" />
-                <span>Activity</span>
+               
               </a>
               <a href="../examples/profile.html" className="dropdown-item">
                 <i className="ni ni-support-16" />
-                <span>Support</span>
               </a>
               <div className="dropdown-divider" />
-              <a href="#!" className="dropdown-item">
-                <i className="ni ni-user-run" />
-                <span>Logout</span>
-              </a>
+           
             </div>
           </li>
         </ul>
@@ -57,8 +86,7 @@ function Editprofil() {
     </nav>
     {/* Header */}
     <div className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" >
-      {/* Mask */}
-      <span className="mask bg-gradient-default opacity-8" />
+      <span className="b" />
    
         
                 <div className="col-4 text-right">
@@ -73,29 +101,33 @@ function Editprofil() {
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="form-group focused">
-                        <label className="form-control-label" htmlFor="input-username">Username</label>
-                        <input type="text" id="input-username" className="form-control form-control-alternative" placeholder="Username" defaultValue="lucky.jesse" />
+                        <label className="form-control-label" htmlFor="input-username">{user.name}</label>
+                        <input type="text" onChange={(e) => setname(e.target.value)} id="input-username" className="form-control form-control-alternative" placeholder="Username" defaultValue="lucky.jesse" />
                       </div>
                     </div>
                     <div className="col-lg-6">
                       <div className="form-group">
-                        <label className="form-control-label" htmlFor="input-email">Email address</label>
-                        <input type="email" id="input-email" className="form-control form-control-alternative" placeholder="jesse@example.com" />
+                        <label className="form-control-label" htmlFor="input-email">{user.email}</label>
+                        <input type="email"  onChange={(e) => setemail(e.target.value)}id="input-email" className="form-control form-control-alternative" placeholder="jesse@example.com" />
                       </div>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="form-group focused">
-                        <label className="form-control-label" htmlFor="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" className="form-control form-control-alternative" placeholder="First name" defaultValue="Lucky" />
+                      <input type="file" onChange={(e) => setimg(e.target.files[0])}   className="custom-input" id="image" name="image" accept="image/*" required />
+                        
                       </div>
                     </div>
                     <div className="col-lg-6">
                       <div className="form-group focused">
-                        <label className="form-control-label" htmlFor="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" className="form-control form-control-alternative" placeholder="Last name" defaultValue="Jesse" />
-                      </div>
+                      <div className="custom-label">Pot Image:</div>
+        
+
+                        
+                        
+                        <button type="button" onClick={handlesubmit} className="bo">save change</button>
+                        <Link to={"/Profil"} > <button type="button" className="bou">return</button></Link> </div>
                     </div>
                   </div>
                 </div>

@@ -5,7 +5,7 @@ const pot = require('../Models/Pot');
 const router = express.Router();
 
 // Add new product
-router.post("/", upload("pots").single("file"),isAuth, async (req, res) => {
+router.post("/", upload("pots").single("file"),async (req, res) => {
     try {
         const url =` ${req.protocol}://${req.get("host")}/${req.file.path}`
         // Create a new product instance using the request body
@@ -23,22 +23,30 @@ router.post("/", upload("pots").single("file"),isAuth, async (req, res) => {
     }
 })
 //get
-router.get('/', async (req, res) => {
+router.get('/',async (req, res) => {
     try {
-      const pots= await pot.find();
-      res.send(pots);
+   
+      const result= await pot.find()
+      
+      res.send(result)
+  
     } catch (error) {
      console.log(error);
     }
   });
 //put
-router.put("/:id",upload("products").single("file"),isAuth(), async (req, res) => {
+router.put("/:id",upload("products").single("file"), async (req, res) => {
     try {
          const result = await Product.updateOne({ _id: req.params.id }, { ...req.body })
             productUpdated = await  Product.findOne({ _id: req.params.id })
              if(req.file)
              { const url = `${req.protocol}://${req.get("host")}/${req.file.path}`
              productUpdated.img =url
+              await productUpdated.save()
+             }
+
+             if(req.totale){
+              productUpdated.totale=productUpdated.totale+req.totale
               await productUpdated.save()
              }
      if (result.modifiedCount || req.file) {
@@ -63,10 +71,13 @@ router.delete('/:id', async (req, res) => {
       console.log(error);
     }
   });
-  router.get('onepot/:id', async (req, res) => {
-    try { 
-      const pot= await pot.findById(req.params.id);
-      res.send(pot);
+
+  router.get('/onepot/:id', async (req, res) => {
+  
+ try { 
+   
+      const response= await pot.findById(req.params.id);
+      res.send(response);
       
     } catch (error) {
      console.log(error);

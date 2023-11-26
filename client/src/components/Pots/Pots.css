@@ -1,0 +1,38 @@
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  left: 50px;
+  bottom: -174px;
+  gap: 120px;
+}
+
+ 
+ 
+ .article1{
+  position: relative;
+
+ }
+
+article img {
+    
+   height: 200px;
+}
+.bi-search::before {
+  content: "\f52a";
+  position: relative;
+  right: 1495px;
+  bottom: 142px;
+  z-index: 10;
+}
+.se {
+   width:auto !important ; 
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  position: relative;
+  right: 17px;
+  bottom: 1200px;
+}

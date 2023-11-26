@@ -2,8 +2,14 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import "./Home.css"
 import Carousel from 'react-bootstrap/Carousel';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../Redux/Actions/Actionuser';
  function Home() {
+  const user = useSelector(state => state.userReducer.currentUser)
+  const naviagte=useNavigate()
+  const dispatch=useDispatch()
+  const token = localStorage.getItem("token")
    return (
 <div  className='home'  >
     {/* Navbar */}
@@ -26,9 +32,12 @@ import { Link } from 'react-router-dom';
           <div  className='icon'>
           <Link to={"/addpot"}   >  <button type="button" className="btn btn-outline-light">créer un pot </button></Link>
 
-            <li className="nav-item active">
+           { !token ? <li className="nav-item active">
             <Link to={"/login"}   > <button type="button" className="btn btn-outline-light">Connexion</button></Link>
-            </li>
+            </li>:
+             <li className="nav-item active">
+               <button type="button" onClick={() => dispatch(logout(),naviagte("/"))} className="btn btn-outline-light">logout</button>
+            </li>}
 
           </div>
           <ul className="navbar-nav d-flex flex-row">
@@ -63,7 +72,7 @@ import { Link } from 'react-router-dom';
     {/* Background image */}
 
     <div id="intro" className="bg-image shadow-2-strong">
-      <div className="mask">
+      <div className="body">
         <div className="container d-flex align-items-center justify-content-center text-center h-100">
         
         </div>
@@ -108,7 +117,7 @@ import { Link } from 'react-router-dom';
                   <div className="mask" style={{backgroundColor: 'rgba(251, 251, 251, 0.15)'}} />
                 </a>
               </div>
-              <div className="card-body">
+              <div className="card">
                 <h5 className="card-title">pot de départ /Retraite</h5>
                 <p className="card-text">
                  
@@ -129,7 +138,7 @@ import { Link } from 'react-router-dom';
                   <div className="mask" style={{backgroundColor: 'rgba(251, 251, 251, 0.15)'}} />
                 </a>
               </div>
-              <div className="card-body">
+              <div className="card">
                 <h5 className="card-title">Anniversaire</h5>
                 <p className="card-text">
                  
@@ -147,10 +156,10 @@ import { Link } from 'react-router-dom';
               <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <img src="https://img.freepik.com/premium-photo/close-up-picture-new-born-baby-feet-knitted-plaid-flowers_139345-1060.jpg?w=740" className="img-fluid" />
                 <a href="#!">
-                  <div className="mask" style={{backgroundColor: 'rgba(251, 251, 251, 0.15)'}} />
+                  <div className="body" style={{backgroundColor: 'rgba(251, 251, 251, 0.15)'}} />
                 </a>
               </div>
-              <div className="card-body">
+              <div className="card">
                 <h5 className="card-title">Naissance/baptéme</h5>
                 <p className="card-text">
         
@@ -174,7 +183,7 @@ import { Link } from 'react-router-dom';
                   <div className="mask" style={{backgroundColor: 'rgba(251, 251, 251, 0.15)'}} />
                 </a>
               </div>
-              <div className="card-body">
+              <div className="card">
                 <h5 className="card-title">Evénement</h5>
                 <p className="card-text">
                  
@@ -195,7 +204,7 @@ import { Link } from 'react-router-dom';
                   <div className="mask" style={{backgroundColor: 'rgba(251, 251, 251, 0.15)'}} />
                 </a>
               </div>
-              <div className="card-body">
+              <div className="card">
                 <h5 className="card-title">Remerciment</h5>
                 <p className="card-text">
                  

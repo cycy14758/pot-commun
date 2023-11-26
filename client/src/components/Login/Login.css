@@ -11,7 +11,8 @@ margin:  0 0;
 display:  flex; 
 align-items:  flex-start; 
 justify-content:  flex-start; 
-background:  #f3f2f2; 
+
+
 }
 h4 {
 font-size:  24px; 
@@ -188,7 +189,7 @@ width:  220px;
 height:  auto; 
 min-height:  100%; 
 position:  relative; 
-background-image: url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+background-image: url();
 background-size:  cover;
 border-top-left-radius:  4px; 
 border-bottom-left-radius:  4px; 
@@ -202,8 +203,8 @@ svg {
 color: #0e0f24 !important;
 font-weight: 800 !important ;
 opacity: 0.7;
-background-image: url("https://img.freepik.com/free-vector/save-money-hand-put-coin-glass-put_24877-59997.jpg?w=740&t=st=1699378318~exp=1699378918~hmac=f098bba80fe49d0f2d198b0be7697d89b818f4e9d774d86f6b53334c612f7e01");
-}
+background-image: url();
+height: 650px;}
 .fb{
 color: #0e0f24 !important;
 font-weight: 500 !important 
@@ -218,5 +219,5 @@ font-weight: 500 !important
 
 .insc{
 position: relative;
-  bottom: 60px;
+  bottom: 60px; width: 150px;
 }

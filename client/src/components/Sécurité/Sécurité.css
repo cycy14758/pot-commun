@@ -16,6 +16,7 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
+  height: 800px;
 }
 
 label {
@@ -63,7 +64,7 @@ input {
 
 button {
   padding: 10px;
-  background-color: #007bff; /* Button background color */
+  background-color: #000000; /* Button background color */
   color: #fff; /* Button text color */
   border: none;
   border-radius: 4px;

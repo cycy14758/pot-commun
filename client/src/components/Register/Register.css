@@ -202,8 +202,9 @@ svg {
 .form-Login{
 color: #0e0f24 !important;
 font-weight: 800 !important ;
-opacity: 0.7;
-background-image: url("https://img.freepik.com/free-vector/save-money-hand-put-coin-glass-put_24877-59997.jpg?w=740&t=st=1699378318~exp=1699378918~hmac=f098bba80fe49d0f2d198b0be7697d89b818f4e9d774d86f6b53334c612f7e01");
+width: 800px;
+opacity: 0.9;
+background-image: url("https://img.freepik.com/vecteurs-premium/pot-verre-plein-argent-design-plat_23-2147641820.jpg?w=740");
 }
 .fb{
 color: #0e0f24 !important;

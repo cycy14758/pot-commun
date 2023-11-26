@@ -1,8 +1,16 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom';
 function Information() {
   const user=useSelector(state=>state.userReducer.currentuser)
+  const disptach=useDispatch()
+  const [email, setemail] = useState("")
+  const [password, setpassword] = useState("")
+  const navigate=useNavigate()
+  
+ 
+
   return (
 <div>
     <div className="rounded-top text-white d-flex flex-row" style={{backgroundColor: '#000', height: 200}}>

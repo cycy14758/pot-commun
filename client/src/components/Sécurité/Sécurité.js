@@ -35,10 +35,10 @@ function Sécurité() {
         </div>
         <div className="p-4 text-black" style={{backgroundColor: '#f8f9fa'}}>
           <div className="d-flex justify-content-end text-center py-1">
-          <button type="button" className="btn btn-outline-dark" data-mdb-ripple-color="dark" style={{zIndex: 1}}>
+          <Link to={"/info"}  ><button type="button" className="btn btn-outline-dark" data-mdb-ripple-color="dark" style={{zIndex: 1}}>
       Mes informations
-            </button>
-            <button type="button" className="btn btn-outline-dark" data-mdb-ripple-color="dark" style={{zIndex: 1}}>
+            </button></Link> 
+          <button type="button" className="btn btn-outline-dark" data-mdb-ripple-color="dark" style={{zIndex: 1}}>
               Sécurité
             </button>
             <button type="button" className="btn btn-outline-dark" data-mdb-ripple-color="dark" style={{zIndex: 1}}>

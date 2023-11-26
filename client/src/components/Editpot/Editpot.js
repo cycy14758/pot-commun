@@ -1,6 +1,34 @@
 import React from 'react'
+import'./Editpot.css'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { editpot } from '../../Redux/Actions/Actionpot';
 
 function Editpot() {
+  const [title, settitle] = useState("");
+  const [desc, setdescription] = useState("");
+  const [totale, settotale] = useState("");
+  const [img, setimg] = useState();
+
+  
+
+  const navigate = useNavigate();
+  const dispatch=useDispatch()
+  
+  const handlesubmit =(e)=>{
+    e.preventDefault()
+   
+    const data = new FormData();
+
+    data.append("title",title)
+    data.append("description",desc)
+    data.append("total",totale)
+    data.append("file",img)
+
+  dispatch(editpot(data,navigate))
+   
+  }
   return (
     <div>
   <meta charSet="utf-8" />
@@ -17,8 +45,11 @@ function Editpot() {
       <form action>
         <h3>Registration Form</h3>
         <div className="form-group">
-          <input type="text" placeholder="First Name" className="form-control" />
-          <input type="text" placeholder="Last Name" className="form-control" />
+          <label>Pot name</label>
+
+          <input type="text" placeholder="pot Name" className="form-control" />
+          <label>description</label>
+          <input type="text" placeholder="description" className="form-control" />
         </div>
         <div className="form-wrapper">
           <input type="text" placeholder="Username" className="form-control" />
@@ -29,12 +60,7 @@ function Editpot() {
           <i className="zmdi zmdi-email" />
         </div>
         <div className="form-wrapper">
-          <select name id className="form-control">
-            <option value disabled selected>Gender</option>
-            <option value="male">Male</option>
-            <option value="femal">Female</option>
-            <option value="other">Other</option>
-          </select>
+      
           <i className="zmdi zmdi-caret-down" style={{fontSize: 17}} />
         </div>
         <div className="form-wrapper">
